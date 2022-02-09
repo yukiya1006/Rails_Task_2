@@ -1,0 +1,42 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+
+      <% if @user.errors.any? %>
+      <%= @user.errors.count %>errors prohibited this obj from being saved:
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+         </ul>
+      <% end %>
+
+      <h1>User info</h1>
+
+        <%= form_with model: @user, local:true do |f| %>
+          <div class="form-group">name</div>
+          <%= f.text_field :name %>
+
+          <div class="form-group">Image</div>
+          <%= f.file_field :profile_image, placeholder: "プロフィール画像", accept: "image/*" %>
+
+          <div class="form-group">Introduction</div>
+          <%= f.text_area :introduction %>
+
+          <div class="form-group">
+            <%= f.submit 'Update User', class: "btn btn-secondary" %>
+          </div>
+        <% end %>
+
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>users/edit ユーザーの編集画面</h3>
+<li>バリテーションのメッセージが表示されない</li>
