@@ -1,5 +1,5 @@
 <div class="col-md-3">
-  
+
 <% if book.errors.any? %>
 <%= book.errors.count %>errors prohibited this obj from being saved:
 <ul>
@@ -28,9 +28,8 @@
       </tr>
     </tbody>
   </table>
-  </ta>
   <div class="row">
-    <%= link_to edit_user_path(id: current_user), class: "btn btn-outline-secondary btn-block", method: :get do %>
+    <%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block", method: :get do %>
       <i class="fas fa-user-cog"></i>
     <% end %>
   </div>
