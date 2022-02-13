@@ -17,23 +17,10 @@
             <tr>
               <td>
                 <%= link_to user_path do %>
-                  <% if @user.profile_image.attached? %>
-                  <%= image_tag @user.profile_image, size: "50x50" %>
-                  <% else %>
-                  <%= image_tag 'no_image', size: "50x50" %>
-                  <% end %>
+                  <%= image_tag book.user.get_profile_image, size: "50x50" %>
                 <% end %>
               </td>
-              <td>
-
-                <%= link_to book.title, book_path(book) %>
-
-                <!--下の記述同じなのか-->
-                <!--<%= link_to book_path(book.id) do %>-->
-                <!--<%= book.title %>-->
-                <!--<% end %>-->
-
-              </td>
+              <td><%= link_to book.title, book_path(book) %></td>
               <td><%= book.body %></td>
             </tr>
             <% end %>
